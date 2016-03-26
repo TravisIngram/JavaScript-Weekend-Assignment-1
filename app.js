@@ -57,6 +57,36 @@ function claim(name, type, cost){
 	this.visitCost = cost;
 }
 
-//function to determine percent covered
+// Step 3. Add a function that will determine what percent
+// of the claim will be covered, based on the rules provided.
+
+var percentCoveredCalc = function(visitType) {
+	
+	switch(visitType.toLowerCase()) {
+		case "optical":
+		percentCovered += 0.00;
+		break;
+
+		case "specialist":
+		percentCovered += 0.10;
+		break;
+
+		case "primary care":
+		percentCovered += 0.50;
+		break;
+
+		case "emergency":
+		percentCovered += 1.00;
+		break;
+
+		default:
+		console.log("No coverage for you!");
+		percentCovered = 0;
+	}
+	return percentCovered;
+};
+
+//percentCoveredCalc(claim8.visitType);
+
 
 //function to determine amount covered
