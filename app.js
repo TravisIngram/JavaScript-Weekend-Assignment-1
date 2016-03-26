@@ -28,7 +28,7 @@ var claim5 = {
 	visitCost: 770
 };
 
-// Created five more claims using the 'constructor function'.
+// Step 1. Created five more claims using the 'constructor function'.
 
 var claim6 = new claim("Andre Astora", "Specialist", 2100);
 var claim7 = new claim("Solaire Astora", "Optical", 24000);
@@ -36,9 +36,19 @@ var claim8 = new claim("Laurentius Swamp", "Emergency", 425);
 var claim9 = new claim("Oswald Carim", "Primary Care", 160);
 var claim10 = new claim("Malfurion Stormrage", "Specialist", 880);
 
+// Step 2. Combine the existing claims with the new claims in one array.
 
-var initialList = [claim1, claim2, claim3, claim4, claim5]
+// I am not sure how to add newly created objcts to an existing
+// or empty array.  The various 'Array' methods work on the actual object,
+// not simply the named variable.  I'll research more  but for now, I just
+// created the new array manually.
 
+var initialList = [claim1, claim2, claim3, claim4, claim5];
+
+var claimsList = [claim1, claim2, claim3, claim4, claim5,
+claim6, claim7, claim8, claim9, claim10];
+
+var percentCovered = 0;
 var totalPayedOut = 0;
 
 function claim(name, type, cost){
