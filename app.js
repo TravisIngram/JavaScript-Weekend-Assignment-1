@@ -86,7 +86,22 @@ var percentCoveredCalc = function(visitType) {
 	return percentCovered;
 };
 
-//percentCoveredCalc(claim8.visitType);
+// Testing the output.
 
+percentCoveredCalc(claim9.visitType);
+console.log(percentCovered);
 
-//function to determine amount covered
+// Step 4, 5, and 6. Add a function that will determine the `totalPayedOut`
+// for a given claim.  Include a statemt indicating how much and to
+// whom the payment was made as well as the total paid out.
+
+var dollarAmtCalc = function(visitCost, percentCovered, patientName) {
+	totalPayedOut = visitCost * percentCovered;
+	console.log("Paid out", "$" + totalPayedOut, "for", patientName + ".");
+	return totalPayedOut;
+};
+
+// Testing the output.
+
+dollarAmtCalc(claim9.visitCost, percentCoveredCalc(claim9.visitType), claim9.patientName);
+console.log(totalPayedOut);
