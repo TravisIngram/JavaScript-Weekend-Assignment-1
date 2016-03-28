@@ -64,19 +64,19 @@ var percentCoveredCalc = function(visitType) {
 	
 	switch(visitType.toLowerCase()) {
 		case "optical":
-		percentCovered += 0.00;
+		percentCovered = 0.00;
 		break;
 
 		case "specialist":
-		percentCovered += 0.10;
+		percentCovered = 0.10;
 		break;
 
 		case "primary care":
-		percentCovered += 0.50;
+		percentCovered = 0.50;
 		break;
 
 		case "emergency":
-		percentCovered += 1.00;
+		percentCovered = 1.00;
 		break;
 
 		default:
@@ -88,8 +88,8 @@ var percentCoveredCalc = function(visitType) {
 
 // Testing the output.
 
-percentCoveredCalc(claim9.visitType);
-console.log(percentCovered);
+// percentCoveredCalc(claim9.visitType);
+// console.log(percentCovered);
 
 // Step 4, 5, and 6. Add a function that will determine the `totalPayedOut`
 // for a given claim.  Include a statemt indicating how much and to
