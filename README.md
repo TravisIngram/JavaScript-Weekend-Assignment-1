@@ -58,6 +58,23 @@ for (var i = 0; i < initialList.length; i ++) {
 }
 ```
 
+```javascript
+dollarAmtCalc(claim9.visitCost, percentCoveredCalc(claim9.visitType), claim9.patientName);
+console.log(totalPayedOut);
+```
+
+```javascript
+var dollarAmtCalc = function(visitCost, percentCovered, patientName) {
+	totalPayedOut = visitCost * percentCoveredCalc;
+	console.log("Paid out", "$" + totalPayedOut, "for", patientName + ".");
+	return totalPayedOut;
+};
+```
+
+```javascript
+var percentCovered = 0;
+```
+
 ####Issues####
 
 I've gotten stuck a number of times on this particular challenge.  Currently, I'm trying to figure out how to determine the amount that is paid to the patient.
@@ -76,10 +93,14 @@ What has been tripping me up is how to access and combine the various values.  I
 
 I'll go ahead and try to do everything at once and see where I end up.  I'll use the same process that I did for the STI group project earlier in the week.
 
-===
+=== (20160327)
 
 I've reverted and am just using independent functions.  This produces the correct output when they are run individually and fed specific data.
 
 They don't work when run consecutively.  The `percentCovered` gets doubled because that is what you are effectively dong when calling the first function in the second.
 
 I might try again tomorrow.  We'll see.
+
+=== (20160329)
+
+After talking with Russ and Ryan, I've managed to make this project work as intended.  At least how I assume it was supposed to work.  The main piece I was missing was adding in `var claim = claimsList[i];` to my loop and talking more about the argument I would pass into `percentCoveredCalc` function.  Talking though those pieces helped me out and increased my understanding of what I ought to do.
