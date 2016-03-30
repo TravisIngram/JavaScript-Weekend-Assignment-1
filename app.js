@@ -48,7 +48,7 @@ var initialList = [claim1, claim2, claim3, claim4, claim5];
 var claimsList = [claim1, claim2, claim3, claim4, claim5,
 claim6, claim7, claim8, claim9, claim10];
 
-// var percentCovered = 0;
+
 var totalPayedOut = 0;
 
 function claim(name, type, cost){
@@ -60,14 +60,7 @@ function claim(name, type, cost){
 // Step 3. Add a function that will determine what percent
 // of the claim will be covered, based on the rules provided.
 
-for (var i = 0; i < claimsList.length; i ++) {
-
-var patientName = claim.paitentName;
-var visitCost = claim.visitCost;
-var visitType = claim.visitType;
-
-}
-
+// function percentCoveredCalc(visitType) {
 var percentCoveredCalc = function(visitType) {
 	
 	switch(visitType.toLowerCase()) {
@@ -94,22 +87,22 @@ var percentCoveredCalc = function(visitType) {
 	return percentCovered;
 };
 
-// Testing the output.
-
-// percentCoveredCalc(claim9.visitType);
-// console.log(percentCovered);
-
 // Step 4, 5, and 6. Add a function that will determine the `totalPayedOut`
 // for a given claim.  Include a statemt indicating how much and to
 // whom the payment was made as well as the total paid out.
 
-var dollarAmtCalc = function(visitCost, percentCovered, patientName) {
-	totalPayedOut = visitCost * percentCoveredCalc;
-	console.log("Paid out", "$" + totalPayedOut, "for", patientName + ".");
-	return totalPayedOut;
+
+var paidOut = function(list) {
+	for (var i = 0; i < claimsList.length; i ++) {
+		var claim = claimsList[i];
+
+		var patientName = claim.patientName;
+		var visitCost = claim.visitCost;
+		var visitType = claim.visitType;
+
+		totalPayedOut = visitCost * percentCoveredCalc(visitType);
+		console.log("Paid out", "$" + totalPayedOut, "for", patientName + ".");
+	}
 };
 
-// Testing the output.
-
-dollarAmtCalc(claim9.visitCost, percentCoveredCalc(claim9.visitType), claim9.patientName);
-console.log(totalPayedOut);
+paidOut(claimsList);
